@@ -39,6 +39,3 @@ jobs:
 ```sh
 npm test
 ```
-
-Marketplace publication is blocked until the GitHub Marketplace listing rights
-and `github.com/aistemsplitter/aistemsplitter-action` repository are available.
