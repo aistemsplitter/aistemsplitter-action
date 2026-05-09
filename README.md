@@ -13,7 +13,7 @@ jobs:
   split-audio:
     runs-on: ubuntu-latest
     steps:
-      - uses: aistemsplitter/aistemsplitter-action@v0.1.0
+      - uses: aistemsplitter/aistemsplitter-action@v0.1.1
         id: split
         with:
           api-key: ${{ secrets.AISTEMSPLITTER_API_KEY }}
@@ -27,7 +27,7 @@ jobs:
 ## Credits
 
 ```yaml
-- uses: aistemsplitter/aistemsplitter-action@v0.1.0
+- uses: aistemsplitter/aistemsplitter-action@v0.1.1
   id: credits
   with:
     operation: credits
