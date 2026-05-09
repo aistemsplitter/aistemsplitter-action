@@ -1,0 +1,15 @@
+{
+  "name": "aistemsplitter-action",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "GitHub Action for creating AIStemSplitter audio splits.",
+  "scripts": {
+    "test": "node --test tests/main.test.mjs",
+    "smoke": "node -e \"import('./src/main.js').then(() => console.log('AIStemSplitter action module loaded'))\""
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}

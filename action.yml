@@ -1,0 +1,58 @@
+name: AIStemSplitter
+description: Create an AIStemSplitter audio split from a direct audio URL.
+author: AIStemSplitter
+
+branding:
+  icon: music
+  color: purple
+
+inputs:
+  operation:
+    description: Operation to run.
+    required: false
+    default: create-split
+  api-key:
+    description: AIStemSplitter API key.
+    required: true
+  audio-url:
+    description: Public audio URL to split.
+    required: true
+  stem-model:
+    description: Stem model to use.
+    required: false
+    default: 6s
+  output-format:
+    description: Output audio format.
+    required: false
+    default: mp3
+  wait:
+    description: Wait for the split to reach a terminal status.
+    required: false
+    default: 'false'
+  timeout-seconds:
+    description: Maximum seconds to wait when wait is true.
+    required: false
+    default: '300'
+  api-base-url:
+    description: AIStemSplitter API base URL.
+    required: false
+    default: https://api.aistemsplitter.org/v1
+  idempotency-key:
+    description: Optional idempotency key for retry-safe split creation.
+    required: false
+
+outputs:
+  credits-balance:
+    description: Current credit balance when operation is credits.
+  credits-unit:
+    description: Current credit unit when operation is credits.
+  split-id:
+    description: Created split id.
+  status:
+    description: Current or final split status.
+  result-json:
+    description: Full JSON result returned by the API.
+
+runs:
+  using: node20
+  main: src/main.js

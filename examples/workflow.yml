@@ -1,0 +1,18 @@
+name: AIStemSplitter audio split
+
+on:
+  workflow_dispatch:
+
+jobs:
+  split-audio:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: aistemsplitter/aistemsplitter-action@v0.1.0
+        id: split
+        with:
+          api-key: ${{ secrets.AISTEMSPLITTER_API_KEY }}
+          audio-url: https://example.com/song.mp3
+          stem-model: 6s
+          wait: 'true'
+
+      - run: echo "Split ${{ steps.split.outputs.split-id }} is ${{ steps.split.outputs.status }}"
